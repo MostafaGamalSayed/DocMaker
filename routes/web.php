@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+* Documentations Routes
+*/
+Route::group(['prefix' => 'documentations'], function(){
+  Route::get('', 'DocumentationController@index')->name('doc.index');
+  Route::get('/{documentation}', 'DocumentationController@show')->name('doc.show');
+});
